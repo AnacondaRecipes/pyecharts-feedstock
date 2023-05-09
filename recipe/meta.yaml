@@ -6,8 +6,10 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyecharts-{{ version }}.tar.gz
-  sha256: 352a347c38c0bb122c1540bb2dd65cc534b3b8c9892c0e65c155d30102e824a1
+  # TODO: PyPi tarball is missing licence as of v2.0.3
+  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyecharts-{{ version }}.tar.gz
+  url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 58962a89028b859a4e27ffceb3d08799367204bb479819bda091e38270891170
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
