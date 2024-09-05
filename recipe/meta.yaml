@@ -1,5 +1,5 @@
 {% set name = "pyecharts" %}
-{% set version = "2.0.3" %}
+{% set version = "2.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -9,7 +9,7 @@ source:
   # TODO: PyPi tarball is missing licence as of v2.0.3
   # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyecharts-{{ version }}.tar.gz
   url: https://github.com/{{ name }}/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 58962a89028b859a4e27ffceb3d08799367204bb479819bda091e38270891170
+  sha256: c3a2ef58fe8c6722e9de610e0bbdb7c3a426973bf68a9c0f305f1a813070facb  
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
